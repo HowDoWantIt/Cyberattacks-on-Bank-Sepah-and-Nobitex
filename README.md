@@ -1,42 +1,48 @@
-Technical Analysis of Cyberattacks on Bank Sepah and Nobitex
-By Ali Shadi, Senior Security Analyst at IDC7Sky
+# Technical Analysis of Cyberattacks on Bank Sepah and Nobitex
 
-Attack on Bank Sepah:
-Initial Access: Likely gained via insecure RDP endpoints or spear-phishing campaigns targeting staff.
+*By Ali Shadi, Senior Security Analyst at IDC7Sky*
 
-Lateral Movement: Use of tools like Mimikatz to harvest administrator credentials and move laterally inside the network.
+---
 
-Data Wiping: Deployment of custom wiper malware to destroy databases and internal backups, causing service outages.
+## Attack on Bank Sepah
 
-Attack on Nobitex Cryptocurrency Exchange:
-Initial Infection: Staff machines were infected with infostealer malware such as RedLine or AgentTesla, which secretly harvested session cookies and credentials.
+1. **Initial Access:** Likely gained via insecure RDP endpoints or spear-phishing campaigns targeting staff.  
+2. **Lateral Movement:** Use of tools like **Mimikatz** to harvest administrator credentials and move laterally inside the network.  
+3. **Data Wiping:** Deployment of custom **wiper malware** to destroy databases and internal backups, causing service outages.
 
-Session Hijacking: Attackers used stolen session tokens to bypass two-factor authentication (2FA) and gain access to administrative wallets.
+---
 
-Cryptocurrency Theft: Funds were transferred to burn addresses (wallets with lost or inaccessible private keys), making recovery impossible.
+## Attack on Nobitex Cryptocurrency Exchange
 
-Common Vulnerabilities Exploited:
-Lack of robust multi-factor authentication (MFA) and poor session management.
+1. **Initial Infection:** Staff machines were infected with **infostealer malware** such as RedLine or AgentTesla, which secretly harvested session cookies and credentials.  
+2. **Session Hijacking:** Attackers used stolen session tokens to bypass two-factor authentication (2FA) and gain access to administrative wallets.  
+3. **Cryptocurrency Theft:** Funds were transferred to **burn addresses** (wallets with lost or inaccessible private keys), making recovery impossible.
 
-Flat network architecture without sufficient segmentation between critical systems.
+---
 
-Backup systems were either locally stored or accessible, making them vulnerable to deletion.
+## Common Vulnerabilities Exploited
 
-Flowchart of the Attack Process:
-Reconnaissance & Initial Access
-(via RDP, VPN vulnerabilities, or spear-phishing)
+- Lack of robust **multi-factor authentication (MFA)** and poor session management.  
+- **Flat network architecture** without sufficient segmentation between critical systems.  
+- Backup systems were either locally stored or accessible, making them vulnerable to deletion.
 
-Lateral Movement
-(using Mimikatz, Pass-the-Hash techniques)
+---
 
-Data Exfiltration & Wiping
-(targeting databases and backups)
+## Flowchart of the Attack Process
 
-Infostealer Malware on Staff Devices
-(installing RedLine, AgentTesla, etc.)
+1. **Reconnaissance & Initial Access**  
+   (via RDP, VPN vulnerabilities, or spear-phishing)  
+2. **Lateral Movement**  
+   (using Mimikatz, Pass-the-Hash techniques)  
+3. **Data Exfiltration & Wiping**  
+   (targeting databases and backups)  
+4. **Infostealer Malware on Staff Devices**  
+   (installing RedLine, AgentTesla, etc.)  
+5. **Session Hijacking**  
+   (reusing stolen tokens to bypass 2FA)  
+6. **Cryptocurrency Transfer**  
+   (to burn addresses, irreversible)
 
-Session Hijacking
-(reusing stolen tokens to bypass 2FA)
+---
 
-Cryptocurrency Transfer
-(to burn addresses, irreversible)
+*Prepared by Ali Shadi, IDC7Sky*
